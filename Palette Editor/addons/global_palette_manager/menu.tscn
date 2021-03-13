@@ -1,0 +1,155 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://addons/global_palette_manager/menu.gd" type="Script" id=3]
+[ext_resource path="res://addons/global_palette_manager/CreatePaletteDialog.tscn" type="PackedScene" id=5]
+[ext_resource path="res://addons/global_palette_manager/LoadPaletteDialog.tscn" type="PackedScene" id=9]
+
+[sub_resource type="StreamTexture" id=1]
+load_path = "res://.import/File.svg-c858bff46f6a83b838fb783730954de7.stex"
+
+[sub_resource type="StreamTexture" id=2]
+load_path = "res://.import/Save.svg-8ea449c5830cf430b6ebb72a67778574.stex"
+
+[sub_resource type="StreamTexture" id=3]
+load_path = "res://.import/Load.svg-cbe536a5c039d077c4bbd8ac98926419.stex"
+
+[sub_resource type="StreamTexture" id=4]
+load_path = "res://.import/Add.svg-1d9a663e67b02f470b814f33a5abb1c7.stex"
+
+[node name="menu" type="PanelContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 1017.0
+margin_bottom = 593.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Margin" type="MarginContainer" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Body" type="VBoxContainer" parent="Panel/Margin"]
+margin_right = 1010.0
+margin_bottom = 586.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Path" type="LineEdit" parent="Panel/Margin/Body"]
+margin_right = 1010.0
+margin_bottom = 24.0
+text = "res://Palettes"
+
+[node name="Toolbar" type="HBoxContainer" parent="Panel/Margin/Body"]
+margin_top = 28.0
+margin_right = 1010.0
+margin_bottom = 50.0
+
+[node name="ImportButton" type="Button" parent="Panel/Margin/Body/Toolbar"]
+margin_right = 249.0
+margin_bottom = 22.0
+size_flags_horizontal = 3
+disabled = true
+text = "Import"
+icon = SubResource( 1 )
+
+[node name="SaveButton" type="Button" parent="Panel/Margin/Body/Toolbar"]
+margin_left = 253.0
+margin_right = 503.0
+margin_bottom = 22.0
+size_flags_horizontal = 3
+disabled = true
+text = "Save as .pal"
+icon = SubResource( 2 )
+
+[node name="LoadButton" type="Button" parent="Panel/Margin/Body/Toolbar"]
+margin_left = 507.0
+margin_right = 756.0
+margin_bottom = 22.0
+size_flags_horizontal = 3
+text = "Load Palette"
+icon = SubResource( 3 )
+
+[node name="NewButton" type="Button" parent="Panel/Margin/Body/Toolbar"]
+margin_left = 760.0
+margin_right = 1010.0
+margin_bottom = 22.0
+size_flags_horizontal = 3
+text = "New"
+icon = SubResource( 4 )
+
+[node name="HSeparator" type="HSeparator" parent="Panel/Margin/Body"]
+margin_top = 54.0
+margin_right = 1010.0
+margin_bottom = 58.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/Margin/Body"]
+margin_top = 62.0
+margin_right = 1010.0
+margin_bottom = 546.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="PalettesContainer" type="HBoxContainer" parent="Panel/Margin/Body/ScrollContainer"]
+margin_right = 1010.0
+margin_bottom = 484.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HistoryContainer" type="ScrollContainer" parent="Panel/Margin/Body"]
+margin_top = 550.0
+margin_right = 1010.0
+margin_bottom = 586.0
+rect_min_size = Vector2( 0, 36 )
+follow_focus = true
+scroll_vertical_enabled = false
+
+[node name="History" type="HBoxContainer" parent="Panel/Margin/Body/HistoryContainer"]
+margin_right = 1010.0
+grow_horizontal = 0
+size_flags_horizontal = 3
+
+[node name="CreatePaletteDialog" parent="." instance=ExtResource( 5 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 6.0
+margin_top = 4.0
+margin_right = 306.0
+margin_bottom = 104.0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="LoadPaletteDialog" parent="." instance=ExtResource( 9 )]
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 6.0
+margin_top = 4.0
+margin_right = 306.0
+margin_bottom = 267.0
+window_title = "Open a File"
+mode_overrides_title = false
+mode = 0
+filters = PoolStringArray( "*.tres" )

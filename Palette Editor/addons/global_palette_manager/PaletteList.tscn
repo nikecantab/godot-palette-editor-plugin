@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://addons/global_palette_manager/PaletteList.gd" type="Script" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StreamTexture" id=3]
+load_path = "res://.import/ToolAddNode.svg-82e79511e9f91633e3bed0ceb233e595.stex"
+
+[node name="PaletteList" type="VBoxContainer"]
+margin_right = 64.0
+margin_bottom = 208.0
+rect_min_size = Vector2( 80, 80 )
+size_flags_horizontal = 9
+size_flags_vertical = 3
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_right = 80.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 70, 0 )
+text = "Name:"
+
+[node name="LineEdit" type="LineEdit" parent="."]
+margin_top = 18.0
+margin_right = 80.0
+margin_bottom = 32.0
+custom_styles/focus = SubResource( 1 )
+custom_styles/normal = SubResource( 2 )
+text = "Test Palette"
+
+[node name="AddButton" type="TextureButton" parent="."]
+margin_left = 32.0
+margin_top = 36.0
+margin_right = 48.0
+margin_bottom = 52.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = SubResource( 3 )

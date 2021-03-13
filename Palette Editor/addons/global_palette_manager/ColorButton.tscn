@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://addons/global_palette_manager/ColorIndexLabel.tscn" type="PackedScene" id=2]
+[ext_resource path="res://addons/global_palette_manager/ColorButton.gd" type="Script" id=3]
+
+[sub_resource type="StreamTexture" id=1]
+load_path = "res://.import/Remove.svg-235bb63fe9d30d51ba429283810d8502.stex"
+
+[node name="ColorPickerButton" type="HBoxContainer" groups=[
+"ColorPicker",
+]]
+margin_right = 74.0
+margin_bottom = 33.0
+rect_min_size = Vector2( 80, 0 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorIndexLabel" parent="." instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 20.0
+margin_bottom = 33.0
+rect_min_size = Vector2( 20, 0 )
+size_flags_stretch_ratio = 0.5
+clip_text = true
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="."]
+margin_left = 24.0
+margin_right = 60.0
+margin_bottom = 33.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+edit_alpha = false
+
+[node name="TextureButton" type="TextureButton" parent="."]
+margin_left = 64.0
+margin_right = 80.0
+margin_bottom = 33.0
+texture_normal = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

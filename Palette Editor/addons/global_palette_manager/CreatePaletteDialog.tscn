@@ -1,0 +1,83 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="StreamTexture" id=1]
+load_path = "res://.import/ImportCheck.svg-2b94599f9ec9832ead646970fa305a8e.stex"
+
+[node name="CreatePaletteDialog" type="WindowDialog"]
+anchor_left = 0.146
+anchor_top = 0.083
+anchor_right = 0.146
+anchor_bottom = 0.083
+margin_left = -149.504
+margin_top = -49.8
+margin_right = 150.496
+margin_bottom = 50.2
+rect_min_size = Vector2( 300, 100 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+popup_exclusive = true
+window_title = "New Palette"
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+rect_min_size = Vector2( 284, 80 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Body" type="VBoxContainer" parent="MarginContainer"]
+margin_right = 284.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 256, 64 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LineEdit" type="LineEdit" parent="MarginContainer/Body"]
+margin_right = 284.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+align = 1
+placeholder_text = "(name)"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Body"]
+margin_top = 28.0
+margin_right = 284.0
+margin_bottom = 52.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MarginContainer/Body/HBoxContainer"]
+margin_top = 5.0
+margin_right = 206.0
+margin_bottom = 19.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "# of Colors:"
+
+[node name="ColorAmount" type="SpinBox" parent="MarginContainer/Body/HBoxContainer"]
+margin_left = 210.0
+margin_right = 284.0
+margin_bottom = 24.0
+size_flags_horizontal = 8
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.2
+min_value = 1.0
+value = 1.0
+
+[node name="Button" type="Button" parent="MarginContainer/Body"]
+margin_left = 82.0
+margin_top = 56.0
+margin_right = 202.0
+margin_bottom = 78.0
+size_flags_horizontal = 4
+text = "Create Palette"
+icon = SubResource( 1 )
