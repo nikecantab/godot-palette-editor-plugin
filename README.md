@@ -1,0 +1,1 @@
+godot palette editor plugin
