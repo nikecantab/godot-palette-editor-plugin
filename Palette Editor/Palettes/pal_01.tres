@@ -5,4 +5,4 @@
 [resource]
 script = ExtResource( 1 )
 name = "Pal01"
-palette = PoolColorArray( 0, 0, 0, 1 )
+palette = [ Color( 0.71875, 0.516602, 0.516602, 1 ), Color( 0.462745, 0.231373, 0.231373, 1 ), Color( 0.396078, 0.184314, 0.184314, 1 ), Color( 0.247059, 0.0117647, 0.0117647, 1 ) ]

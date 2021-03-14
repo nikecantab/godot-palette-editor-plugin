@@ -5,7 +5,7 @@ extends Control
 #get_filelist scans the whole directory, it is highly recommended you set a folder to load your palettes from on startup
 
 ###SETTINGS###
-const MAX_HISTORY_SIZE = 15
+const MAX_HISTORY_SIZE = 40
 const LOAD_PALETTES_ON_STARTUP = true
 
 ###CODE###
